@@ -38,12 +38,12 @@ async function start(){
 }
 
 function loadLabeledImages() {
-    const labels = ['Jisoo', 'Lisa', 'Rose', 'Jennie' ]
+    const labels = ['Jisoo', 'Lisa', 'Rose', 'Jennie' ,'Anucha']
     return Promise.all(
         labels.map(async label => {
             const descriptions = []
-            for (let i = 1; i <= 4; i++) {
-                const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/BorntoDev/FaceRegJS/master/labeled_images/${label}/${i}.jpg`)
+            for (let i = 1; i <= 5; i++) {
+                const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/anger03/FaceRegJS1/main/labeled_images/${label}/${i}.jpg`)
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 descriptions.push(detections.descriptor)
               }
